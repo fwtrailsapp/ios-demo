@@ -12,7 +12,10 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        var camera = GMSCameraPosition.cameraWithLatitude(1.285, longitude: 103.848, zoom: 12)
+        var mapView = GMSMapView.mapWithFrame(CGRectZero, camera: camera)
+        self.view = mapView
     }
 
     override func didReceiveMemoryWarning() {

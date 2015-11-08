@@ -1,0 +1,16 @@
+PODS:
+  - AEXML (2.0.1)
+  - GoogleMaps (1.10.5)
+  - Kml.swift (0.1.2):
+    - AEXML
+
+DEPENDENCIES:
+  - GoogleMaps
+  - Kml.swift (~> 0.1.2)
+
+SPEC CHECKSUMS:
+  AEXML: d6bb5b994521fcf3667ee8ccc1ed533f31b19218
+  GoogleMaps: da51c62c338c2d9c47cdad470a0d1e0e4b8544e4
+  Kml.swift: 5bc671566d31520432c97129cb6c6312c289c73a
+
+COCOAPODS: 0.39.0
