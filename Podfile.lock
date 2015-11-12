@@ -1,16 +1,16 @@
 PODS:
-  - AEXML (2.0.1)
   - GoogleMaps (1.10.5)
-  - Kml.swift (0.1.2):
-    - AEXML
+  - iOS-KML-Framework (0.0.2):
+    - TBXML (~> 1.5)
+  - TBXML (1.5)
 
 DEPENDENCIES:
   - GoogleMaps
-  - Kml.swift (~> 0.1.2)
+  - iOS-KML-Framework
 
 SPEC CHECKSUMS:
-  AEXML: d6bb5b994521fcf3667ee8ccc1ed533f31b19218
   GoogleMaps: da51c62c338c2d9c47cdad470a0d1e0e4b8544e4
-  Kml.swift: 5bc671566d31520432c97129cb6c6312c289c73a
+  iOS-KML-Framework: a3428baabee9bba6fa8d8246223619277f1bc430
+  TBXML: 9f9dadb239f2f2af1dadb87fe43a0ce6e479379a
 
 COCOAPODS: 0.39.0

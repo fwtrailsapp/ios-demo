@@ -13,11 +13,19 @@ import CoreData
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    var exerciseTypes = []
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
-        //initialize Google Maps SDK
-        GMSServices.provideAPIKey("AIzaSyAd2mmJznzk-8mPpVzlGgxD06Yh6yo18Pg");
+        // initialize Google Maps SDK
+        GMSServices.provideAPIKey("AIzaSyAd2mmJznzk-8mPpVzlGgxD06Yh6yo18Pg")
+        
+        // initialize array of exercise types
+        let bikeType = ExerciseType(name: "Bike", MET: 8.00)
+        let runType = ExerciseType(name: "Run", MET: 7.50)
+        let walkType = ExerciseType(name: "Walk", MET: 3.80)
+        
+        exerciseTypes = [bikeType, runType, walkType]
         
         return true
     }

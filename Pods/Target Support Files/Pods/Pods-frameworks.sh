@@ -84,10 +84,10 @@ strip_invalid_archs() {
 
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
-  install_framework "Pods/AEXML.framework"
-  install_framework "Pods/Kml_swift.framework"
+  install_framework "Pods/TBXML.framework"
+  install_framework "Pods/iOS_KML_Framework.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
-  install_framework "Pods/AEXML.framework"
-  install_framework "Pods/Kml_swift.framework"
+  install_framework "Pods/TBXML.framework"
+  install_framework "Pods/iOS_KML_Framework.framework"
 fi

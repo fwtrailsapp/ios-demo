@@ -1,7 +1,10 @@
 source 'https://github.com/CocoaPods/Specs.git'
-platform :ios, '8.1'
-pod 'GoogleMaps'
+platform :ios, '9.1'
+link_with 'ios-demo', 'ios-demoTests', 'ios-demoUITests'
 
+pod 'GoogleMaps'
+pod 'iOS-KML-Framework'
 use_frameworks!
 
-pod 'Kml.swift', '~> 0.1.2'
+
+

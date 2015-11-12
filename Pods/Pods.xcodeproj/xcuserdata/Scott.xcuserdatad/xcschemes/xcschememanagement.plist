@@ -4,17 +4,17 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>AEXML.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>Kml.swift.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 		<key>Pods.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>TBXML.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>iOS-KML-Framework.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -22,17 +22,17 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>0569E582A09AA8ADEE30BE9979E6E09F</key>
+		<key>16794EDF5A1D0A1EE38AE9576733A54B</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>1D5C56B62A5B5452D6EF2358D8735F95</key>
+		<key>64D3430384DA27953C88AE4289F4ED37</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>6B9813D7E7E5E2BAC2903B82EC58E643</key>
+		<key>BCCDEE28F0B88F7D3DC8F392B0A89747</key>
 		<dict>
 			<key>primary</key>
 			<true/>
