@@ -46,8 +46,8 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zWP-lD-dxP">
                                                 <rect key="frame" x="300" y="0.0" width="300" height="180"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hOS-yi-6UO">
-                                                        <rect key="frame" x="106" y="50" width="89" height="30"/>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hOS-yi-6UO">
+                                                        <rect key="frame" x="106" y="75" width="89" height="30"/>
                                                         <animations/>
                                                         <state key="normal" title="Start Activity"/>
                                                     </button>

@@ -8,36 +8,36 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, CLLocationManagerDelegate {
 
     // MARK: Properties
     @IBOutlet weak var mapView: GMSMapView!
-    
     let locationManager = CLLocationManager()
-    let stdZoom: Float = 12
-    
+    let stdZoom: Float = 15
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.locationManager.delegate = self
         self.locationManager.requestWhenInUseAuthorization()
         self.mapView.myLocationEnabled = true
         self.mapView.settings.myLocationButton = true
         
-        if let myLocation = mapView.myLocation {
-            print("my location enabled")
-            let update = GMSCameraUpdate.setTarget(myLocation.coordinate, zoom: stdZoom)
-            self.mapView.moveCamera(update)
-        } else {
-            print("my location could not be enabled")
-        }
+        self.mapView.addObserver(self, forKeyPath: "myLocation", options: NSKeyValueObservingOptions.New, context: nil)
+
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
+    override func observeValueForKeyPath(keyPath: String?, ofObject object: AnyObject?, change: [String : AnyObject]?, context: UnsafeMutablePointer<Void>) {
+        let myLocation: CLLocation = change![NSKeyValueChangeNewKey] as! CLLocation
+        self.mapView.camera = GMSCameraPosition.cameraWithTarget(myLocation.coordinate, zoom: stdZoom)
+        self.mapView.settings.myLocationButton = true
+    }
+    
 
 }
 
