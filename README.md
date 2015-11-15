@@ -37,4 +37,4 @@ unearned Achievements.
 So far, this project is dependent on the following projects:
 
 1. [Google Maps SDK iOS](https://developers.google.com/maps/documentation/ios-sdk/?hl=en)
-2. [Kml.swift](https://github.com/asus4/Kml.swift)
+2. [iOS-KML-Framework](https://github.com/FLCLjp/iOS-KML-Framework)
