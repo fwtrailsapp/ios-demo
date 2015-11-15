@@ -17,7 +17,4 @@ class ExerciseType {
         self.name = name
         self.MET = MET
     }
-    
-    
-    
 }

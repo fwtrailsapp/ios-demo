@@ -12,22 +12,25 @@ class ViewController: UIViewController {
 
     // MARK: Properties
     @IBOutlet weak var mapView: GMSMapView!
-    @IBOutlet weak var exerciseTypePicker: UIPickerView!
     
-    @IBAction func activityStartButton(sender: UIButton) {
-        
-    }
-    
-    let fwLat = 41.0804
-    let fwLong = -85.1392
+    let locationManager = CLLocationManager()
     let stdZoom: Float = 12
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let target = CLLocationCoordinate2D(latitude: fwLat, longitude:fwLong);
-        let update = GMSCameraUpdate.setTarget(target, zoom: stdZoom)
-        mapView.moveCamera(update)
+        self.locationManager.requestWhenInUseAuthorization()
+        self.mapView.myLocationEnabled = true
+        self.mapView.settings.myLocationButton = true
+        
+        if let myLocation = mapView.myLocation {
+            print("my location enabled")
+            let update = GMSCameraUpdate.setTarget(myLocation.coordinate, zoom: stdZoom)
+            self.mapView.moveCamera(update)
+        } else {
+            print("my location could not be enabled")
+        }
     }
 
     override func didReceiveMemoryWarning() {

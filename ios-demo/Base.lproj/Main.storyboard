@@ -47,9 +47,6 @@
                                                 <rect key="frame" x="300" y="0.0" width="300" height="180"/>
                                                 <animations/>
                                                 <state key="normal" title="Start Activity"/>
-                                                <connections>
-                                                    <action selector="activityStartButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jcO-Jy-Y0C"/>
-                                                </connections>
                                             </button>
                                         </subviews>
                                         <animations/>
@@ -68,6 +65,7 @@
                                                 <exclude reference="FRg-cc-AbK"/>
                                                 <exclude reference="Fqz-is-ZlS"/>
                                                 <exclude reference="Vkz-da-qTc"/>
+                                                <exclude reference="jIo-6H-CH3"/>
                                             </mask>
                                         </variation>
                                     </stackView>
@@ -132,7 +130,6 @@
                         <barButtonItem key="leftBarButtonItem" systemItem="action" id="GLA-fm-1bY"/>
                     </navigationItem>
                     <connections>
-                        <outlet property="exerciseTypePicker" destination="HTG-Ef-xC8" id="g0G-KM-juX"/>
                         <outlet property="mapView" destination="x9a-6D-bKp" id="c0L-Ge-TfQ"/>
                     </connections>
                 </viewController>
