@@ -30,7 +30,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         self.mapView.settings.myLocationButton = true
         
         self.mapView.addObserver(self, forKeyPath: "myLocation", options: NSKeyValueObservingOptions.New, context: nil)
-
+        
+        let mgr = KMLManager()
     }
 
     override func didReceiveMemoryWarning() {
