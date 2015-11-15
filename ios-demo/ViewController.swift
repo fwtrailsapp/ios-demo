@@ -12,8 +12,11 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
 
     // MARK: Properties
     @IBOutlet weak var mapView: GMSMapView!
+    @IBOutlet weak var activityStatistics: UITextView!
+    
     let locationManager = CLLocationManager()
     let stdZoom: Float = 15
+    let activityStart = NSDate()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,9 +38,16 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     override func observeValueForKeyPath(keyPath: String?, ofObject object: AnyObject?, change: [String : AnyObject]?, context: UnsafeMutablePointer<Void>) {
         let myLocation: CLLocation = change![NSKeyValueChangeNewKey] as! CLLocation
         self.mapView.camera = GMSCameraPosition.cameraWithTarget(myLocation.coordinate, zoom: stdZoom)
+        
+        let currTime = NSDate()
+        updateActivityStatistics(currTime, currLocation: myLocation.coordinate);
+        
         self.mapView.settings.myLocationButton = true
     }
     
+    func updateActivityStatistics(currTime: NSDate, currLocation: CLLocationCoordinate2D) {
+        
+    }
 
 }
 

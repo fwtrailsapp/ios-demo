@@ -36,70 +36,39 @@
                                             </mask>
                                         </variation>
                                     </view>
-                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5xp-L3-x3Z">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7s8-yY-tGG">
                                         <rect key="frame" x="0.0" y="420" width="600" height="180"/>
                                         <subviews>
-                                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HTG-Ef-xC8">
-                                                <rect key="frame" x="0.0" y="0.0" width="300" height="180"/>
-                                                <animations/>
-                                            </pickerView>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zWP-lD-dxP">
-                                                <rect key="frame" x="300" y="0.0" width="300" height="180"/>
-                                                <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hOS-yi-6UO">
-                                                        <rect key="frame" x="106" y="75" width="89" height="30"/>
-                                                        <animations/>
-                                                        <state key="normal" title="Start Activity"/>
-                                                    </button>
-                                                </subviews>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Kgf-YU-45g">
+                                                <rect key="frame" x="8" y="26" width="240" height="128"/>
                                                 <animations/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                <constraints>
-                                                    <constraint firstItem="hOS-yi-6UO" firstAttribute="centerY" secondItem="zWP-lD-dxP" secondAttribute="centerY" id="Cya-IX-2l4"/>
-                                                    <constraint firstItem="hOS-yi-6UO" firstAttribute="centerX" secondItem="zWP-lD-dxP" secondAttribute="centerX" id="hzW-Fn-1XM"/>
-                                                </constraints>
-                                            </view>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                            </textView>
                                         </subviews>
                                         <animations/>
-                                        <constraints>
-                                            <constraint firstItem="HTG-Ef-xC8" firstAttribute="centerY" secondItem="5xp-L3-x3Z" secondAttribute="centerY" id="0hf-dQ-kM3"/>
-                                            <constraint firstItem="HTG-Ef-xC8" firstAttribute="leading" secondItem="5xp-L3-x3Z" secondAttribute="leading" id="FRg-cc-AbK"/>
-                                            <constraint firstItem="HTG-Ef-xC8" firstAttribute="leading" secondItem="5xp-L3-x3Z" secondAttribute="leading" id="Fqz-is-ZlS"/>
-                                            <constraint firstItem="zWP-lD-dxP" firstAttribute="height" secondItem="5xp-L3-x3Z" secondAttribute="height" id="HB9-Fg-ItY"/>
-                                            <constraint firstItem="HTG-Ef-xC8" firstAttribute="width" secondItem="5xp-L3-x3Z" secondAttribute="width" multiplier="0.5" id="QKw-51-MJA"/>
-                                            <constraint firstItem="HTG-Ef-xC8" firstAttribute="height" secondItem="5xp-L3-x3Z" secondAttribute="height" id="SkD-xq-DNM"/>
-                                            <constraint firstItem="HTG-Ef-xC8" firstAttribute="leading" secondItem="5xp-L3-x3Z" secondAttribute="leading" id="Vkz-da-qTc"/>
-                                            <constraint firstItem="zWP-lD-dxP" firstAttribute="height" secondItem="5xp-L3-x3Z" secondAttribute="height" id="j8e-6X-NT0"/>
-                                            <constraint firstItem="HTG-Ef-xC8" firstAttribute="leading" secondItem="5xp-L3-x3Z" secondAttribute="leadingMargin" id="jIo-6H-CH3"/>
-                                        </constraints>
-                                        <variation key="default">
-                                            <mask key="constraints">
-                                                <exclude reference="FRg-cc-AbK"/>
-                                                <exclude reference="Fqz-is-ZlS"/>
-                                                <exclude reference="Vkz-da-qTc"/>
-                                                <exclude reference="jIo-6H-CH3"/>
-                                                <exclude reference="j8e-6X-NT0"/>
-                                            </mask>
-                                        </variation>
-                                    </stackView>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </view>
                                 </subviews>
                                 <animations/>
                                 <constraints>
                                     <constraint firstItem="x9a-6D-bKp" firstAttribute="centerX" secondItem="1WH-Us-ufG" secondAttribute="centerX" id="IyH-gE-v2x"/>
+                                    <constraint firstItem="7s8-yY-tGG" firstAttribute="height" secondItem="1WH-Us-ufG" secondAttribute="height" multiplier="0.3" id="LTT-Cd-5ZH"/>
+                                    <constraint firstItem="7s8-yY-tGG" firstAttribute="height" secondItem="1WH-Us-ufG" secondAttribute="height" id="RlK-lr-Neh"/>
                                     <constraint firstItem="x9a-6D-bKp" firstAttribute="top" secondItem="1WH-Us-ufG" secondAttribute="topMargin" id="TNB-gc-Wzp"/>
+                                    <constraint firstItem="7s8-yY-tGG" firstAttribute="width" secondItem="1WH-Us-ufG" secondAttribute="width" id="Tjd-SN-JKh"/>
                                     <constraint firstAttribute="height" constant="536" id="YuV-jf-Fp2"/>
                                     <constraint firstItem="x9a-6D-bKp" firstAttribute="height" secondItem="1WH-Us-ufG" secondAttribute="height" multiplier="0.7" id="Z5E-VW-mbe"/>
                                     <constraint firstItem="x9a-6D-bKp" firstAttribute="height" secondItem="1WH-Us-ufG" secondAttribute="height" multiplier="0.7" id="a6K-bO-FT0"/>
                                     <constraint firstItem="x9a-6D-bKp" firstAttribute="height" secondItem="1WH-Us-ufG" secondAttribute="height" multiplier="0.7" id="bHd-3z-Aj4"/>
-                                    <constraint firstItem="5xp-L3-x3Z" firstAttribute="centerX" secondItem="1WH-Us-ufG" secondAttribute="centerX" id="blE-i6-L5I"/>
                                     <constraint firstItem="x9a-6D-bKp" firstAttribute="width" secondItem="1WH-Us-ufG" secondAttribute="width" id="cXF-t2-vfi"/>
-                                    <constraint firstItem="5xp-L3-x3Z" firstAttribute="height" secondItem="1WH-Us-ufG" secondAttribute="height" multiplier="0.3" id="fWl-M2-tOh"/>
-                                    <constraint firstItem="5xp-L3-x3Z" firstAttribute="width" secondItem="1WH-Us-ufG" secondAttribute="width" id="nqx-Z6-EiW"/>
                                     <constraint firstItem="x9a-6D-bKp" firstAttribute="width" secondItem="1WH-Us-ufG" secondAttribute="width" id="pRX-an-bn4"/>
                                 </constraints>
                                 <variation key="default">
                                     <mask key="constraints">
                                         <exclude reference="YuV-jf-Fp2"/>
+                                        <exclude reference="RlK-lr-Neh"/>
                                         <exclude reference="TNB-gc-Wzp"/>
                                         <exclude reference="a6K-bO-FT0"/>
                                         <exclude reference="bHd-3z-Aj4"/>
@@ -150,6 +119,7 @@
                         <barButtonItem key="leftBarButtonItem" systemItem="action" id="GLA-fm-1bY"/>
                     </navigationItem>
                     <connections>
+                        <outlet property="activityStatistics" destination="Kgf-YU-45g" id="15t-W9-p65"/>
                         <outlet property="mapView" destination="x9a-6D-bKp" id="TLr-OJ-elY"/>
                     </connections>
                 </viewController>
