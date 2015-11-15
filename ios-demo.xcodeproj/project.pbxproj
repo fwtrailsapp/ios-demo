@@ -11,6 +11,7 @@
 		5650AA23D723B096C682F508 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1569F0C76FBD54553B987C81 /* Pods.framework */; };
 		7EFCEBD9F1A8D4F46E67DFCE /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71511A2274CF47AAEFAC6989 /* Pods.framework */; };
 		7F05DB911BEFE0B500AFFB52 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 7F05DB901BEFE0B500AFFB52 /* .gitignore */; };
+		7F91D7981BF9345E008F0DF7 /* KMLManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F91D7971BF9345E008F0DF7 /* KMLManager.swift */; };
 		D25E15741BF237A9000AA6EC /* ExerciseType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25E15731BF237A9000AA6EC /* ExerciseType.swift */; };
 		D28467F21BEFC8AF00938343 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28467F11BEFC8AF00938343 /* AppDelegate.swift */; };
 		D28467F41BEFC8AF00938343 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28467F31BEFC8AF00938343 /* ViewController.swift */; };
@@ -44,6 +45,7 @@
 		18C360855584444624E9E6DF /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		71511A2274CF47AAEFAC6989 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F05DB901BEFE0B500AFFB52 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		7F91D7971BF9345E008F0DF7 /* KMLManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KMLManager.swift; sourceTree = "<group>"; };
 		863EBA3EE834C1D837720181 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		8D096CA9E6518350CA06E585 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		B6C95345E4BC233FC933B40E /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
@@ -137,6 +139,7 @@
 		D28467F01BEFC8AF00938343 /* ios-demo */ = {
 			isa = PBXGroup;
 			children = (
+				7F91D7971BF9345E008F0DF7 /* KMLManager.swift */,
 				D2E785761BF6BC8F00730B69 /* ios-demo-Bridging-Header.h */,
 				D28467F11BEFC8AF00938343 /* AppDelegate.swift */,
 				D28467F31BEFC8AF00938343 /* ViewController.swift */,
@@ -441,6 +444,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D28467F41BEFC8AF00938343 /* ViewController.swift in Sources */,
+				7F91D7981BF9345E008F0DF7 /* KMLManager.swift in Sources */,
 				D28467FA1BEFC8AF00938343 /* ios_demo.xcdatamodeld in Sources */,
 				D28467F21BEFC8AF00938343 /* AppDelegate.swift in Sources */,
 				D25E15741BF237A9000AA6EC /* ExerciseType.swift in Sources */,
