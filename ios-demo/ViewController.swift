@@ -21,6 +21,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     var previousLocation: CLLocation?
     var previousTime: NSDate?
     
+    //MARK: View Controller Overrides
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -39,6 +40,11 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         // Dispose of any resources that can be recreated.
     }
     
+    // MARK: Location Manager Overrides
+    /*
+        Method that handles changes in the user's location. It refreshes the map to
+        refocus on the user and calls updates the user's activity statistics.
+    */
     override func observeValueForKeyPath(keyPath: String?, ofObject object: AnyObject?, change: [String : AnyObject]?, context: UnsafeMutablePointer<Void>) {
         let myLocation: CLLocation = change![NSKeyValueChangeNewKey] as! CLLocation
         
@@ -55,12 +61,20 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         self.mapView.settings.myLocationButton = true
     }
     
+    /*
+        Updates the activity statistics bar at the bottom of the activity screen.
+        These statistics are: activity duration, total distance traveled, and
+        current speed.
+    */
     func updateActivityStatistics(currTime: NSDate, currLocation: CLLocation) {
-        
+        // if previous time and previous location have been set, calculate the 
+        // statistics
         if previousTime != nil && previousLocation != nil {
+            // for calculating the current speed
             let timeDifferenceHours = currTime.timeIntervalSinceDate(previousTime!) / (3600 as Double)
             let spatialDistanceMiles = currLocation.distanceFromLocation(previousLocation!) / 1609.34
             
+            // for calculating activity totals...
             let totalDistanceTraveledMiles = currLocation.distanceFromLocation(activityStartLocation!) / 1609.34
             let totalTimeDifferenceMin = currTime.timeIntervalSinceDate(activityStartTime) / (60 as Double)
             
@@ -71,6 +85,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
             
         }
         
+        // Save the current time and current location
         previousTime = currTime
         previousLocation = currLocation
     }
