@@ -57,8 +57,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         
         let currTime = NSDate()
         updateActivityStatistics(currTime, currLocation: myLocation)
-        
-        self.mapView.settings.myLocationButton = true
     }
     
     /*

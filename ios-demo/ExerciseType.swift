@@ -10,6 +10,7 @@ import Foundation
 
 class ExerciseType {
     
+    // MARK: Properties
     var name: String = ""
     var MET: Double = 0
     
