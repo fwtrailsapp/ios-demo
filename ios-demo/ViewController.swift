@@ -32,7 +32,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         
         self.mapView.addObserver(self, forKeyPath: "myLocation", options: NSKeyValueObservingOptions.New, context: nil)
         
-        let mgr = KMLManager()
+        let mgr = KMLManager(gmap: mapView)
     }
 
     override func didReceiveMemoryWarning() {
