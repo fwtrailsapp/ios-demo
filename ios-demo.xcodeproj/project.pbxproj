@@ -12,9 +12,10 @@
 		7EFCEBD9F1A8D4F46E67DFCE /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71511A2274CF47AAEFAC6989 /* Pods.framework */; };
 		7F05DB911BEFE0B500AFFB52 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 7F05DB901BEFE0B500AFFB52 /* .gitignore */; };
 		7F91D7981BF9345E008F0DF7 /* KMLManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F91D7971BF9345E008F0DF7 /* KMLManager.swift */; };
+		D218778C1C0925D300F0F9CC /* Activity.swift in Sources */ = {isa = PBXBuildFile; fileRef = D218778B1C0925D300F0F9CC /* Activity.swift */; };
 		D25E15741BF237A9000AA6EC /* ExerciseType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25E15731BF237A9000AA6EC /* ExerciseType.swift */; };
 		D28467F21BEFC8AF00938343 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28467F11BEFC8AF00938343 /* AppDelegate.swift */; };
-		D28467F41BEFC8AF00938343 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28467F31BEFC8AF00938343 /* ViewController.swift */; };
+		D28467F41BEFC8AF00938343 /* ActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28467F31BEFC8AF00938343 /* ActivityViewController.swift */; };
 		D28467F71BEFC8AF00938343 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D28467F51BEFC8AF00938343 /* Main.storyboard */; };
 		D28467FA1BEFC8AF00938343 /* ios_demo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D28467F81BEFC8AF00938343 /* ios_demo.xcdatamodeld */; };
 		D28467FC1BEFC8AF00938343 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D28467FB1BEFC8AF00938343 /* Assets.xcassets */; };
@@ -49,10 +50,11 @@
 		863EBA3EE834C1D837720181 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		8D096CA9E6518350CA06E585 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		B6C95345E4BC233FC933B40E /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		D218778B1C0925D300F0F9CC /* Activity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Activity.swift; sourceTree = "<group>"; };
 		D25E15731BF237A9000AA6EC /* ExerciseType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExerciseType.swift; sourceTree = "<group>"; };
 		D28467EE1BEFC8AF00938343 /* ios-demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ios-demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D28467F11BEFC8AF00938343 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		D28467F31BEFC8AF00938343 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		D28467F31BEFC8AF00938343 /* ActivityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityViewController.swift; sourceTree = "<group>"; };
 		D28467F61BEFC8AF00938343 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D28467F91BEFC8AF00938343 /* ios_demo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ios_demo.xcdatamodel; sourceTree = "<group>"; };
 		D28467FB1BEFC8AF00938343 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -142,13 +144,14 @@
 				7F91D7971BF9345E008F0DF7 /* KMLManager.swift */,
 				D2E785761BF6BC8F00730B69 /* ios-demo-Bridging-Header.h */,
 				D28467F11BEFC8AF00938343 /* AppDelegate.swift */,
-				D28467F31BEFC8AF00938343 /* ViewController.swift */,
+				D28467F31BEFC8AF00938343 /* ActivityViewController.swift */,
 				D28467F51BEFC8AF00938343 /* Main.storyboard */,
 				D28467FB1BEFC8AF00938343 /* Assets.xcassets */,
 				D28467FD1BEFC8AF00938343 /* LaunchScreen.storyboard */,
 				D28468001BEFC8AF00938343 /* Info.plist */,
 				D28467F81BEFC8AF00938343 /* ios_demo.xcdatamodeld */,
 				D25E15731BF237A9000AA6EC /* ExerciseType.swift */,
+				D218778B1C0925D300F0F9CC /* Activity.swift */,
 			);
 			path = "ios-demo";
 			sourceTree = "<group>";
@@ -443,7 +446,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D28467F41BEFC8AF00938343 /* ViewController.swift in Sources */,
+				D218778C1C0925D300F0F9CC /* Activity.swift in Sources */,
+				D28467F41BEFC8AF00938343 /* ActivityViewController.swift in Sources */,
 				7F91D7981BF9345E008F0DF7 /* KMLManager.swift in Sources */,
 				D28467FA1BEFC8AF00938343 /* ios_demo.xcdatamodeld in Sources */,
 				D28467F21BEFC8AF00938343 /* AppDelegate.swift in Sources */,
