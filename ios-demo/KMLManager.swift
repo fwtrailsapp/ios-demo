@@ -13,6 +13,7 @@ class KMLManager {
     // MARK: InstanceData
     let gmap : GMSMapView
     
+    // MARK : Functions
     init(gmap : GMSMapView) {
         self.gmap = gmap
         loadUrl("https://gist.githubusercontent.com/libjared/4b703481eccad557807c/raw/78ebe13d134c8fdb4c14c62c37cad5b2a02af133/dude.kml")
@@ -22,14 +23,12 @@ class KMLManager {
         let root = KMLParser.parseKMLAtURL(NSURL(string: url))
         if root == nil {
             print("Failed at parse.")
-            return;
+            return
         }
         let placemarks = root.placemarks() as! [KMLPlacemark]
-        print("Found \(placemarks.count) placemarks!!!!!")
         
         for trail in placemarks {
             let linestr = trail.geometry as! KMLLineString
-            print("Trail called \(trail.name)")
             let path = GMSMutablePath()
             for coord in linestr.coordinates {
                 let lat = Float(coord.latitude)
