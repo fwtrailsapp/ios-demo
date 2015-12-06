@@ -18,8 +18,6 @@ class ActivityViewController: UIViewController, CLLocationManagerDelegate {
     
     let locationManager = CLLocationManager()
     let stdZoom: Float = 15
-    let activityStartTime = NSDate()
-    var activityStartLocation: CLLocation?
     var previousLocation: CLLocation?
     var previousTime: NSDate?
     var activity: Activity?
@@ -51,11 +49,6 @@ class ActivityViewController: UIViewController, CLLocationManagerDelegate {
     override func observeValueForKeyPath(keyPath: String?, ofObject object: AnyObject?, change: [String : AnyObject]?, context: UnsafeMutablePointer<Void>) {
         let myLocation: CLLocation = change![NSKeyValueChangeNewKey] as! CLLocation
         
-        // Set the start of the activity if it isn't set
-        if activityStartLocation == nil {
-            activityStartLocation = myLocation
-        }
-        
         self.mapView.camera = GMSCameraPosition.cameraWithTarget(myLocation.coordinate, zoom: stdZoom)
         
         let currTime = NSDate()
@@ -70,6 +63,9 @@ class ActivityViewController: UIViewController, CLLocationManagerDelegate {
     func updateActivityStatistics(currTime: NSDate, currLocation: CLLocation) {
         
         if activity != nil && activity!.state! == ActivityState.RECORDING {
+            // add currLocation coordinates to activity.path
+            activity!.path.append(currLocation.coordinate)
+            
             // if previous time and previous location have been set, calculate the
             // statistics
             if previousTime != nil && previousLocation != nil {
@@ -78,14 +74,12 @@ class ActivityViewController: UIViewController, CLLocationManagerDelegate {
                 let spatialDistanceMiles = currLocation.distanceFromLocation(previousLocation!) / 1609.34
                 
                 // for calculating activity totals...
-                let totalDistanceTraveledMiles = currLocation.distanceFromLocation(activityStartLocation!) / 1609.34
-                let totalTimeDifferenceMin = currTime.timeIntervalSinceDate(activityStartTime) / (60 as Double)
+                activity!.duration += (timeDifferenceHours * 60)
+                activity!.distance += spatialDistanceMiles
                 
-                activityStatistics.text = "Activity Duration: \(totalTimeDifferenceMin)" +
-                    "\nDistance Travelled: \(totalDistanceTraveledMiles)" +
+                activityStatistics.text = "Activity Duration: \(activity!.duration)" +
+                    "\nDistance Travelled: \(activity!.distance)" +
                 "\nCurrent Speed: \(spatialDistanceMiles / timeDifferenceHours)"
-                
-                
             }
             
             // Save the current time and current location
@@ -103,12 +97,18 @@ class ActivityViewController: UIViewController, CLLocationManagerDelegate {
     }
     
     func completeActivityTapped() {
-        
+        let alert = UIAlertController(title: "Finish Activity",
+            message: "Would you like to save or discard this activity?",
+            preferredStyle: UIAlertControllerStyle.Alert)
+        alert.addAction(UIAlertAction(title: "Save", style: UIAlertActionStyle.Default, handler: saveHandler))
+        alert.addAction(UIAlertAction(title: "Discard", style: UIAlertActionStyle.Default, handler: discardHandler))
+        alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel, handler: nil))
+        self.presentViewController(alert, animated: true, completion: nil)
     }
     
     func recordControllerTapped() {
         if activity == nil {
-            activity = Activity()
+            activity = Activity(timestamp: NSDate().timeIntervalSince1970 * 1000)
         }
         
         switch activity!.state! {
@@ -118,9 +118,19 @@ class ActivityViewController: UIViewController, CLLocationManagerDelegate {
         case .RECORDING:
             activity!.state! = ActivityState.PAUSED
             recordController.image = UIImage(named: "Play")
+            previousLocation = nil
+            previousTime = nil
         default:
             return
         }
+    }
+    
+    func saveHandler(action: UIAlertAction) {
+        
+    }
+    
+    func discardHandler(action: UIAlertAction) {
+        
     }
 }
 

@@ -10,13 +10,22 @@ import Foundation
 
 class Activity {
     
+    // MARK: Properties
     var state: ActivityState?
+    var duration: Double = 0 //minutes
+    var distance: Double = 0 //miles
+    var timestamp: Double //miliseconds since 1970
+    var topSpeed: Double = 0 //mph
+    var path: [CLLocationCoordinate2D]
     
-    init() {
+    init(timestamp: Double) {
         state = ActivityState.CREATED
+        self.timestamp = timestamp
+        self.path = [CLLocationCoordinate2D]()
     }
 }
 
+//MARK: ActivityState
 enum ActivityState {
     case CREATED
     case RECORDING
