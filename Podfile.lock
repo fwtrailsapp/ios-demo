@@ -1,5 +1,5 @@
 PODS:
-  - GoogleMaps (1.10.5)
+  - GoogleMaps (1.11.0)
   - iOS-KML-Framework (0.0.2):
     - TBXML (~> 1.5)
   - TBXML (1.5)
@@ -9,7 +9,7 @@ DEPENDENCIES:
   - iOS-KML-Framework
 
 SPEC CHECKSUMS:
-  GoogleMaps: da51c62c338c2d9c47cdad470a0d1e0e4b8544e4
+  GoogleMaps: 272cf7e7b8aacf4319eac47d57f3b7d142c0826a
   iOS-KML-Framework: a3428baabee9bba6fa8d8246223619277f1bc430
   TBXML: 9f9dadb239f2f2af1dadb87fe43a0ce6e479379a
 
