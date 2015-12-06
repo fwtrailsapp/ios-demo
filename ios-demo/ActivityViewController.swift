@@ -70,8 +70,10 @@ class ActivityViewController: UIViewController, CLLocationManagerDelegate {
             // statistics
             if previousTime != nil && previousLocation != nil {
                 // for calculating the current speed
-                let timeDifferenceHours = currTime.timeIntervalSinceDate(previousTime!) / (3600 as Double)
-                let spatialDistanceMiles = currLocation.distanceFromLocation(previousLocation!) / 1609.34
+                let metersPerMile = 1609.34
+                let secondsPerHour = 3600.0
+                let timeDifferenceHours = currTime.timeIntervalSinceDate(previousTime!) / secondsPerHour
+                let spatialDistanceMiles = currLocation.distanceFromLocation(previousLocation!) / metersPerMile
                 
                 // for calculating activity totals...
                 activity!.duration += (timeDifferenceHours * 60)
