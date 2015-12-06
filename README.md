@@ -38,3 +38,9 @@ So far, this project is dependent on the following projects:
 
 1. [Google Maps SDK iOS](https://developers.google.com/maps/documentation/ios-sdk/?hl=en)
 2. [iOS-KML-Framework](http://cocoadocs.org/docsets/iOS-KML-Framework/0.0.2/)
+
+## Building
+
+* Clone the repository with git.
+* Run `pod install` to update the dependencies, as they are not included.
+* Open the .xcworkspace file and build the project normally.
