@@ -166,63 +166,83 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4L5-9O-DlG" userLabel="Login">
                                         <rect key="frame" x="0.0" y="193" width="600" height="194"/>
                                         <subviews>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="S8Z-HN-0qS">
-                                                <rect key="frame" x="175" y="42" width="250" height="30"/>
+                                            <textField autoresizesSubviews="NO" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="email" minimumFontSize="32" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="S8Z-HN-0qS">
+                                                <rect key="frame" x="175" y="28" width="250" height="41"/>
                                                 <animations/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="250" id="ylh-iP-f35"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PXL-sx-klw">
-                                                <rect key="frame" x="175" y="99" width="250" height="30"/>
+                                            <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qRC-8H-pTq">
+                                                <rect key="frame" x="175" y="125" width="250" height="41"/>
                                                 <animations/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="250" id="3r5-9e-Equ"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
-                                            </textField>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qRC-8H-pTq">
-                                                <rect key="frame" x="281" y="148" width="38" height="30"/>
-                                                <animations/>
-                                                <state key="normal" title="Login"/>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                        <integer key="value" value="10"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                </userDefinedRuntimeAttributes>
+                                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                                <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                <state key="normal" title="Login">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
                                                 <connections>
                                                     <segue destination="lhp-BB-Tey" kind="presentation" id="Fbl-XN-UWC"/>
                                                 </connections>
                                             </button>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="password" minimumFontSize="32" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="PXL-sx-klw">
+                                                <rect key="frame" x="175" y="77" width="250" height="41"/>
+                                                <animations/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="250" id="3r5-9e-Equ"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                            </textField>
                                         </subviews>
                                         <animations/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
-                                            <constraint firstItem="PXL-sx-klw" firstAttribute="top" secondItem="S8Z-HN-0qS" secondAttribute="bottom" constant="27" id="CL2-Wi-xQV"/>
+                                            <constraint firstItem="qRC-8H-pTq" firstAttribute="height" secondItem="S8Z-HN-0qS" secondAttribute="height" id="6cB-s5-5HP"/>
+                                            <constraint firstAttribute="bottom" secondItem="qRC-8H-pTq" secondAttribute="centerY" multiplier="4:3" id="FxQ-eC-csv"/>
+                                            <constraint firstAttribute="bottom" secondItem="PXL-sx-klw" secondAttribute="centerY" multiplier="4:2" id="KgJ-JK-wrY"/>
+                                            <constraint firstAttribute="bottom" secondItem="S8Z-HN-0qS" secondAttribute="centerY" multiplier="4:1" id="PDj-Cr-K2a"/>
                                             <constraint firstItem="PXL-sx-klw" firstAttribute="centerX" secondItem="4L5-9O-DlG" secondAttribute="centerX" id="TiY-Mq-PFc"/>
                                             <constraint firstItem="S8Z-HN-0qS" firstAttribute="centerX" secondItem="4L5-9O-DlG" secondAttribute="centerX" id="V14-9z-XAU"/>
-                                            <constraint firstItem="S8Z-HN-0qS" firstAttribute="top" secondItem="4L5-9O-DlG" secondAttribute="top" constant="42" id="Yyr-dC-hiQ"/>
-                                            <constraint firstItem="qRC-8H-pTq" firstAttribute="top" secondItem="PXL-sx-klw" secondAttribute="bottom" constant="19" id="aeT-cC-r7G"/>
                                             <constraint firstItem="qRC-8H-pTq" firstAttribute="centerX" secondItem="4L5-9O-DlG" secondAttribute="centerX" id="bgn-kw-Bnd"/>
+                                            <constraint firstItem="qRC-8H-pTq" firstAttribute="top" secondItem="4L5-9O-DlG" secondAttribute="top" multiplier="4:3" id="dCQ-I9-OSF"/>
+                                            <constraint firstItem="qRC-8H-pTq" firstAttribute="width" secondItem="PXL-sx-klw" secondAttribute="width" id="fR4-Pg-hOd"/>
+                                            <constraint firstItem="S8Z-HN-0qS" firstAttribute="top" secondItem="4L5-9O-DlG" secondAttribute="top" multiplier="4:1" id="jno-To-nE2"/>
+                                            <constraint firstItem="qRC-8H-pTq" firstAttribute="height" secondItem="PXL-sx-klw" secondAttribute="height" id="nTA-Wz-YsI"/>
+                                            <constraint firstItem="PXL-sx-klw" firstAttribute="top" secondItem="4L5-9O-DlG" secondAttribute="top" multiplier="4:2" id="pUe-SM-dwi"/>
                                         </constraints>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="jno-To-nE2"/>
+                                                <exclude reference="pUe-SM-dwi"/>
+                                                <exclude reference="dCQ-I9-OSF"/>
+                                            </mask>
+                                        </variation>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="N4q-iM-WeP" userLabel="CreateAccount">
                                         <rect key="frame" x="0.0" y="387" width="600" height="193"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Don't Have An Account?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qom-d0-XgE">
-                                                <rect key="frame" x="208" y="86" width="185" height="21"/>
+                                                <rect key="frame" x="128" y="77" width="345" height="39"/>
                                                 <animations/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vtI-DC-IDX">
-                                                <rect key="frame" x="247" y="126" width="107" height="30"/>
+                                                <rect key="frame" x="175" y="135" width="250" height="41"/>
                                                 <animations/>
-                                                <state key="normal" title="Create Account"/>
+                                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="250" id="qj0-y5-yQn"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                                <state key="normal" title="Create Account">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
                                                 <connections>
                                                     <segue destination="GD3-Am-Rja" kind="presentation" id="sQo-au-pxz"/>
                                                 </connections>
