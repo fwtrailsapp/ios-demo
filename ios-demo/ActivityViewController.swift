@@ -21,7 +21,6 @@ class ActivityViewController: UIViewController, CLLocationManagerDelegate {
     var previousLocation: CLLocation?
     var previousTime: NSDate?
     var activity: Activity?
-    var currentPath: GMSMutablePath = GMSMutablePath()
     
     //MARK: View Controller Overrides
     override func viewDidLoad() {
@@ -65,11 +64,10 @@ class ActivityViewController: UIViewController, CLLocationManagerDelegate {
         
         if activity != nil && activity!.state! == ActivityState.RECORDING {
             // add currLocation coordinates to activity.path
-            activity!.path.append(currLocation.coordinate)
+            activity!.path.addCoordinate(currLocation.coordinate)
             
             // display that path
-            currentPath.addCoordinate(currLocation.coordinate)
-            let polyline = GMSPolyline(path: currentPath)
+            let polyline = GMSPolyline(path: activity!.path)
             polyline.map = mapView
             
             // if previous time and previous location have been set, calculate the

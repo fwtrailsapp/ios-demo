@@ -16,12 +16,11 @@ class Activity {
     var distance: Double = 0 //miles
     var timestamp: Double //miliseconds since 1970
     var topSpeed: Double = 0 //mph
-    var path: [CLLocationCoordinate2D]
+    var path: GMSMutablePath = GMSMutablePath()
     
     init(timestamp: Double) {
         state = ActivityState.CREATED
         self.timestamp = timestamp
-        self.path = [CLLocationCoordinate2D]()
     }
 }
 
