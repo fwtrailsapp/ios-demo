@@ -13,6 +13,15 @@
 		7F05DB911BEFE0B500AFFB52 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 7F05DB901BEFE0B500AFFB52 /* .gitignore */; };
 		7F91D7981BF9345E008F0DF7 /* KMLManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F91D7971BF9345E008F0DF7 /* KMLManager.swift */; };
 		D218778C1C0925D300F0F9CC /* Activity.swift in Sources */ = {isa = PBXBuildFile; fileRef = D218778B1C0925D300F0F9CC /* Activity.swift */; };
+		D2493F001C17885400B2E2AB /* AccessDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2493EFF1C17885400B2E2AB /* AccessDataViewController.swift */; };
+		D2493F011C17885400B2E2AB /* AccessDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2493EFF1C17885400B2E2AB /* AccessDataViewController.swift */; };
+		D2493F021C17885400B2E2AB /* AccessDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2493EFF1C17885400B2E2AB /* AccessDataViewController.swift */; };
+		D2493F041C179A4D00B2E2AB /* AccountCreationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2493F031C179A4D00B2E2AB /* AccountCreationController.swift */; };
+		D2493F051C179A4D00B2E2AB /* AccountCreationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2493F031C179A4D00B2E2AB /* AccountCreationController.swift */; };
+		D2493F061C179A4D00B2E2AB /* AccountCreationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2493F031C179A4D00B2E2AB /* AccountCreationController.swift */; };
+		D2493F081C17AD1A00B2E2AB /* PhysicalInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2493F071C17AD1A00B2E2AB /* PhysicalInfoViewController.swift */; };
+		D2493F091C17AD1A00B2E2AB /* PhysicalInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2493F071C17AD1A00B2E2AB /* PhysicalInfoViewController.swift */; };
+		D2493F0A1C17AD1A00B2E2AB /* PhysicalInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2493F071C17AD1A00B2E2AB /* PhysicalInfoViewController.swift */; };
 		D25E15741BF237A9000AA6EC /* ExerciseType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25E15731BF237A9000AA6EC /* ExerciseType.swift */; };
 		D28467F21BEFC8AF00938343 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28467F11BEFC8AF00938343 /* AppDelegate.swift */; };
 		D28467F41BEFC8AF00938343 /* ActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28467F31BEFC8AF00938343 /* ActivityViewController.swift */; };
@@ -51,6 +60,9 @@
 		8D096CA9E6518350CA06E585 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		B6C95345E4BC233FC933B40E /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		D218778B1C0925D300F0F9CC /* Activity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Activity.swift; sourceTree = "<group>"; };
+		D2493EFF1C17885400B2E2AB /* AccessDataViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccessDataViewController.swift; sourceTree = "<group>"; };
+		D2493F031C179A4D00B2E2AB /* AccountCreationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountCreationController.swift; sourceTree = "<group>"; };
+		D2493F071C17AD1A00B2E2AB /* PhysicalInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhysicalInfoViewController.swift; sourceTree = "<group>"; };
 		D25E15731BF237A9000AA6EC /* ExerciseType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExerciseType.swift; sourceTree = "<group>"; };
 		D28467EE1BEFC8AF00938343 /* ios-demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ios-demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D28467F11BEFC8AF00938343 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -152,6 +164,9 @@
 				D28467F81BEFC8AF00938343 /* ios_demo.xcdatamodeld */,
 				D25E15731BF237A9000AA6EC /* ExerciseType.swift */,
 				D218778B1C0925D300F0F9CC /* Activity.swift */,
+				D2493EFF1C17885400B2E2AB /* AccessDataViewController.swift */,
+				D2493F031C179A4D00B2E2AB /* AccountCreationController.swift */,
+				D2493F071C17AD1A00B2E2AB /* PhysicalInfoViewController.swift */,
 			);
 			path = "ios-demo";
 			sourceTree = "<group>";
@@ -446,12 +461,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D2493F041C179A4D00B2E2AB /* AccountCreationController.swift in Sources */,
+				D2493F001C17885400B2E2AB /* AccessDataViewController.swift in Sources */,
 				D218778C1C0925D300F0F9CC /* Activity.swift in Sources */,
 				D28467F41BEFC8AF00938343 /* ActivityViewController.swift in Sources */,
 				7F91D7981BF9345E008F0DF7 /* KMLManager.swift in Sources */,
 				D28467FA1BEFC8AF00938343 /* ios_demo.xcdatamodeld in Sources */,
 				D28467F21BEFC8AF00938343 /* AppDelegate.swift in Sources */,
 				D25E15741BF237A9000AA6EC /* ExerciseType.swift in Sources */,
+				D2493F081C17AD1A00B2E2AB /* PhysicalInfoViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -459,6 +477,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D2493F051C179A4D00B2E2AB /* AccountCreationController.swift in Sources */,
+				D2493F011C17885400B2E2AB /* AccessDataViewController.swift in Sources */,
+				D2493F091C17AD1A00B2E2AB /* PhysicalInfoViewController.swift in Sources */,
 				D284680A1BEFC8B000938343 /* ios_demoTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -467,6 +488,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D2493F061C179A4D00B2E2AB /* AccountCreationController.swift in Sources */,
+				D2493F021C17885400B2E2AB /* AccessDataViewController.swift in Sources */,
+				D2493F0A1C17AD1A00B2E2AB /* PhysicalInfoViewController.swift in Sources */,
 				D28468151BEFC8B000938343 /* ios_demoUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
