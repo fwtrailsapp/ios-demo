@@ -12,9 +12,13 @@ class ActivityViewController: UIViewController, CLLocationManagerDelegate {
 
     // MARK: Properties
     @IBOutlet weak var mapView: GMSMapView!
-    @IBOutlet weak var activityStatistics: UITextView!
+    
     @IBOutlet weak var recordController: UIImageView!
     @IBOutlet weak var completeActivity: UIImageView!
+    @IBOutlet weak var durationView: UITextView!
+    @IBOutlet weak var distanceView: UITextView!
+    @IBOutlet weak var speedView: UITextView!
+    @IBOutlet weak var caloriesView: UITextView!
     
     let locationManager = CLLocationManager()
     let stdZoom: Float = 15
@@ -63,6 +67,7 @@ class ActivityViewController: UIViewController, CLLocationManagerDelegate {
     func updateActivityStatistics(currTime: NSDate, currLocation: CLLocation) {
         
         if activity != nil && activity!.state! == ActivityState.RECORDING {
+            
             // add currLocation coordinates to activity.path
             activity!.path.addCoordinate(currLocation.coordinate)
             
@@ -83,9 +88,34 @@ class ActivityViewController: UIViewController, CLLocationManagerDelegate {
                 activity!.duration += (timeDifferenceHours * 60)
                 activity!.distance += spatialDistanceMiles
                 
-                activityStatistics.text = "Activity Duration: \(activity!.duration)" +
-                    "\nDistance Travelled: \(activity!.distance)" +
-                "\nCurrent Speed: \(spatialDistanceMiles / timeDifferenceHours)"
+                let currSpeed = spatialDistanceMiles / timeDifferenceHours
+                if currSpeed > activity!.topSpeed {
+                    activity!.topSpeed = currSpeed
+                }
+                
+                var formattedDuration = ""
+                var formattedDistance = ""
+                var formattedSpeed = formatNumber(currSpeed)
+                
+                // Change units of duration
+                if activity!.duration < 1 { // convert to seconds
+                    formattedDuration = formatNumber(activity!.duration * 60)
+                } else if activity!.duration <= 60 { // leave as minutes
+                    formattedDuration = formatNumber(activity!.duration)
+                } else { // convert to hours
+                    formattedDuration = formatNumber(activity!.duration / 60)
+                }
+                
+                // Change units of distance
+                if activity!.distance < 1 {
+                    formattedDistance = formatNumber(activity!.distance * 5280)
+                } else {
+                    formattedDistance = formatNumber(activity!.distance)
+                }
+                
+                durationView.text = formattedDuration
+                distanceView.text = formattedDistance
+                speedView.text = formattedSpeed
             }
             
             // Save the current time and current location
@@ -94,6 +124,7 @@ class ActivityViewController: UIViewController, CLLocationManagerDelegate {
         }
     }
     
+    // add touch recognition to play/pause and stop buttons
     func addGestures() {
         let toggle = UITapGestureRecognizer(target: self, action:Selector("recordControllerTapped"))
         recordController.addGestureRecognizer(toggle)
@@ -102,6 +133,7 @@ class ActivityViewController: UIViewController, CLLocationManagerDelegate {
         completeActivity.addGestureRecognizer(stop)
     }
     
+    // action function for stop button
     func completeActivityTapped() {
         let alert = UIAlertController(title: "Finish Activity",
             message: "Would you like to save or discard this activity?",
@@ -112,6 +144,7 @@ class ActivityViewController: UIViewController, CLLocationManagerDelegate {
         self.presentViewController(alert, animated: true, completion: nil)
     }
     
+    // action function for play/pause button 
     func recordControllerTapped() {
         if activity == nil {
             activity = Activity(timestamp: NSDate().timeIntervalSince1970 * 1000)
@@ -131,12 +164,42 @@ class ActivityViewController: UIViewController, CLLocationManagerDelegate {
         }
     }
     
+    // Does all of the same stuff as discardHandler, but creates a summary 
+    // pop up window
     func saveHandler(action: UIAlertAction) {
-        
+        let alert = UIAlertController(title: "Activity Saved",
+            message:    "\nActivity Duration: \(formatNumber(activity!.duration))" +
+                        "\nTotal Distance: \(formatNumber(activity!.distance))" +
+                        "\nTop Speed: \(formatNumber(activity!.topSpeed))" +
+                        "\nAverage Speed: \(formatNumber(activity!.distance / (activity!.duration / 60)))",
+            preferredStyle: UIAlertControllerStyle.Alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Cancel, handler: nil))
+        self.presentViewController(alert, animated: true, completion: nil)
+        discardHandler(action)
     }
     
+    // Method for handling discard selection when activity is
+    // completed. 
+    // Clears all of the activity statistics, sets the activity to
+    // nil, setes the recordController image to play, and clears the map
     func discardHandler(action: UIAlertAction) {
-        
+        clearText()
+        activity = nil
+        recordController.image = UIImage(named: "Play")
+        mapView.clear()
+    }
+    
+    // Helper method to clear all of the text views
+    func clearText() {
+        distanceView.text = ""
+        durationView.text = ""
+        speedView.text = ""
+        caloriesView.text = ""
+    }
+    
+    // Helper method to format numbers
+    func formatNumber(number: Double) -> String {
+        return String(format: "%.1f", number)
     }
 }
 
