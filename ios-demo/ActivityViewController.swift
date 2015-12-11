@@ -15,6 +15,7 @@ class ActivityViewController: UIViewController, CLLocationManagerDelegate {
     
     @IBOutlet weak var recordController: UIImageView!
     @IBOutlet weak var completeActivity: UIImageView!
+    
     @IBOutlet weak var durationView: UITextView!
     @IBOutlet weak var distanceView: UITextView!
     @IBOutlet weak var speedView: UITextView!
@@ -25,6 +26,9 @@ class ActivityViewController: UIViewController, CLLocationManagerDelegate {
     var previousLocation: CLLocation?
     var previousTime: NSDate?
     var activity: Activity?
+    let scottBMR = 1754.84
+    let bikingMET = 7.5
+    var caloriesBurned: Double = 0
     
     //MARK: View Controller Overrides
     override func viewDidLoad() {
@@ -99,23 +103,26 @@ class ActivityViewController: UIViewController, CLLocationManagerDelegate {
                 
                 // Change units of duration
                 if activity!.duration < 1 { // convert to seconds
-                    formattedDuration = formatNumber(activity!.duration * 60)
+                    formattedDuration = formatNumber(activity!.duration * 60) + "s"
                 } else if activity!.duration <= 60 { // leave as minutes
-                    formattedDuration = formatNumber(activity!.duration)
+                    formattedDuration = formatNumber(activity!.duration) + "m"
                 } else { // convert to hours
-                    formattedDuration = formatNumber(activity!.duration / 60)
+                    formattedDuration = formatNumber(activity!.duration / 60) + "h"
                 }
                 
                 // Change units of distance
                 if activity!.distance < 1 {
-                    formattedDistance = formatNumber(activity!.distance * 5280)
+                    formattedDistance = formatNumber(activity!.distance * 5280) + "ft"
                 } else {
-                    formattedDistance = formatNumber(activity!.distance)
+                    formattedDistance = formatNumber(activity!.distance) + "mi"
                 }
+                
+                caloriesBurned = (scottBMR / 24) * bikingMET * (activity!.duration / 60)
                 
                 durationView.text = formattedDuration
                 distanceView.text = formattedDistance
                 speedView.text = formattedSpeed
+                caloriesView.text = "\(formatNumber(caloriesBurned))"
             }
             
             // Save the current time and current location
@@ -135,13 +142,15 @@ class ActivityViewController: UIViewController, CLLocationManagerDelegate {
     
     // action function for stop button
     func completeActivityTapped() {
-        let alert = UIAlertController(title: "Finish Activity",
-            message: "Would you like to save or discard this activity?",
-            preferredStyle: UIAlertControllerStyle.Alert)
-        alert.addAction(UIAlertAction(title: "Save", style: UIAlertActionStyle.Default, handler: saveHandler))
-        alert.addAction(UIAlertAction(title: "Discard", style: UIAlertActionStyle.Default, handler: discardHandler))
-        alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel, handler: nil))
-        self.presentViewController(alert, animated: true, completion: nil)
+        if activity != nil && (activity!.state == .PAUSED || activity!.state == .RECORDING) {
+            let alert = UIAlertController(title: "Finish Activity",
+                message: "Would you like to save or discard this activity?",
+                preferredStyle: UIAlertControllerStyle.Alert)
+            alert.addAction(UIAlertAction(title: "Save", style: UIAlertActionStyle.Default, handler: saveHandler))
+            alert.addAction(UIAlertAction(title: "Discard", style: UIAlertActionStyle.Default, handler: discardHandler))
+            alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel, handler: nil))
+            self.presentViewController(alert, animated: true, completion: nil)
+        }
     }
     
     // action function for play/pause button 
@@ -171,7 +180,8 @@ class ActivityViewController: UIViewController, CLLocationManagerDelegate {
             message:    "\nActivity Duration: \(formatNumber(activity!.duration))" +
                         "\nTotal Distance: \(formatNumber(activity!.distance))" +
                         "\nTop Speed: \(formatNumber(activity!.topSpeed))" +
-                        "\nAverage Speed: \(formatNumber(activity!.distance / (activity!.duration / 60)))",
+                        "\nAverage Speed: \(formatNumber(activity!.distance / (activity!.duration / 60)))" +
+                        "\nCalories Burned: \(formatNumber(caloriesBurned))",
             preferredStyle: UIAlertControllerStyle.Alert)
         alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Cancel, handler: nil))
         self.presentViewController(alert, animated: true, completion: nil)
