@@ -31,6 +31,8 @@
 		D28467FF1BEFC8AF00938343 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D28467FD1BEFC8AF00938343 /* LaunchScreen.storyboard */; };
 		D284680A1BEFC8B000938343 /* ios_demoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28468091BEFC8B000938343 /* ios_demoTests.swift */; };
 		D28468151BEFC8B000938343 /* ios_demoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28468141BEFC8B000938343 /* ios_demoUITests.swift */; };
+		D28E45C71C2B2A8200392B8D /* WebStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28E45C61C2B2A8200392B8D /* WebStore.swift */; };
+		D28E45C81C2B2A8200392B8D /* WebStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28E45C61C2B2A8200392B8D /* WebStore.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,6 +80,7 @@
 		D28468101BEFC8B000938343 /* ios-demoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ios-demoUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D28468141BEFC8B000938343 /* ios_demoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ios_demoUITests.swift; sourceTree = "<group>"; };
 		D28468161BEFC8B000938343 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D28E45C61C2B2A8200392B8D /* WebStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebStore.swift; sourceTree = "<group>"; };
 		D2E785761BF6BC8F00730B69 /* ios-demo-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ios-demo-Bridging-Header.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -167,6 +170,7 @@
 				D2493EFF1C17885400B2E2AB /* AccessDataViewController.swift */,
 				D2493F031C179A4D00B2E2AB /* AccountCreationController.swift */,
 				D2493F071C17AD1A00B2E2AB /* PhysicalInfoViewController.swift */,
+				D28E45C61C2B2A8200392B8D /* WebStore.swift */,
 			);
 			path = "ios-demo";
 			sourceTree = "<group>";
@@ -465,6 +469,7 @@
 				D2493F001C17885400B2E2AB /* AccessDataViewController.swift in Sources */,
 				D218778C1C0925D300F0F9CC /* Activity.swift in Sources */,
 				D28467F41BEFC8AF00938343 /* ActivityViewController.swift in Sources */,
+				D28E45C71C2B2A8200392B8D /* WebStore.swift in Sources */,
 				7F91D7981BF9345E008F0DF7 /* KMLManager.swift in Sources */,
 				D28467FA1BEFC8AF00938343 /* ios_demo.xcdatamodeld in Sources */,
 				D28467F21BEFC8AF00938343 /* AppDelegate.swift in Sources */,
@@ -481,6 +486,7 @@
 				D2493F011C17885400B2E2AB /* AccessDataViewController.swift in Sources */,
 				D2493F091C17AD1A00B2E2AB /* PhysicalInfoViewController.swift in Sources */,
 				D284680A1BEFC8B000938343 /* ios_demoTests.swift in Sources */,
+				D28E45C81C2B2A8200392B8D /* WebStore.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

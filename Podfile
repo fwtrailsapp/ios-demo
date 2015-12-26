@@ -4,6 +4,9 @@ link_with 'ios-demo', 'ios-demoTests', 'ios-demoUITests'
 
 pod 'GoogleMaps'
 pod 'iOS-KML-Framework'
+pod 'SwiftHTTP', '~> 1.0.0'
+pod 'JSONJoy-Swift', '~> 1.0.0'
+
 use_frameworks!
 
 

@@ -185,6 +185,8 @@ class ActivityViewController: UIViewController, CLLocationManagerDelegate {
             preferredStyle: UIAlertControllerStyle.Alert)
         alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Cancel, handler: nil))
         self.presentViewController(alert, animated: true, completion: nil)
+        print("adding account")
+        WebStore.addAccount()
         discardHandler(action)
     }
     
