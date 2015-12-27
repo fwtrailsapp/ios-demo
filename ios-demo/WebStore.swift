@@ -16,10 +16,13 @@ class WebStore {
     }
     
     class func addAccount() {
-        let params = ["first_name": "scott", "last_name": "weidenkopfs", "weight": "156", "age": 21, "sex": "M", "height": "68", "password": "123", "email": "scottyseus.maximus.rex@gmail.com"]
+        let params = ["f_name": "'scott'", "l_name": "'weidenkopf'", "weight": "156", "age": "21", "sex": "'M'", "height": "68", "password": "'123'", "pk_email": "'email'"]
         print(params)
+        let serializer = JSONParameterSerializer()
+        let URL = "http://localhost:8080/trails/add_account"
+        
         do {
-            let opt = try HTTP.POST("http://localhost:8080/trails/add_account", parameters: params, headers: ["Content-Type": "application/json"])
+            let opt = try HTTP.POST(URL, requestSerializer: serializer, headers: ["Content-Type": "application/json"], parameters: params)
             opt.start { response in
                 print("sending request")
             }

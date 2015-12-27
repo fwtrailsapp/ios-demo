@@ -33,17 +33,26 @@ def get_user():
 
 @post('/trails/add_account')
 def add_user():
-    print request.body
-    if request.headers.get('Content-Type') == 'application/json':
-        json = request.json
-        values = ''
-        for key in json:
-            values += json['key'] + ','
-        print values
-        cursor.execute('insert into ACCOUNT values (' + values + ');')
-        return '200'
-    else:
-        return '400'
+    request_json = request.json
+    
+    print type(request_json)
+
+    values = ''
+    keys = ''
+    first = True        
+
+    for key in request_json:
+        if first == True:
+            values += str(request_json[key])
+            keys += str(key)
+            first = False
+        else:
+            keys += ',' + str(key)
+            values += ',' + str(request_json[key])
+    
+    print 'insert into ACCOUNT (' + keys + ') values (' + values + ');'
+    cursor.execute('insert into ACCOUNT (' + keys + ') values (' + values + ');')
+    trails_db.commit()
 
 trails_db = MySQLdb.connect(host="localhost", user="root", passwd="", db="trails")
 cursor = trails_db.cursor()
