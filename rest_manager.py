@@ -54,6 +54,29 @@ def add_user():
     cursor.execute('insert into ACCOUNT (' + keys + ') values (' + values + ');')
     trails_db.commit()
 
+
+@post('/trails/api/1/activity')
+def create_activity():
+    
+    request_json = request.json
+
+    values = ''
+    keys = ''
+    first = True  
+
+    for key in request_json:
+        if first == True:
+            values += str(request_json[key])
+            keys += str(key)
+            first = False
+        else:
+            keys += ',' + str(key)
+            values += ',' + str(request_json[key]) 
+    print 'insert into ACTIVITY (' + keys + ') values (' + values + ');'
+    cursor.execute('insert into ACTIVITY (' + keys + ') values (' + values + ');')
+    trails_db.commit()
+
+
 trails_db = MySQLdb.connect(host="localhost", user="root", passwd="", db="trails")
 cursor = trails_db.cursor()
 

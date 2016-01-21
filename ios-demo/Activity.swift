@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Activity {
+class Activity: DictionarySerializable {
     
     // MARK: Properties
     var state: ActivityState?
@@ -22,7 +22,13 @@ class Activity {
         state = ActivityState.CREATED
         self.timestamp = timestamp
     }
+    
+    func toDictionary() -> Dictionary<String, AnyObject> {
+        return ["top_speed": topSpeed, "distance": distance, "duration": duration, "timestamp": timestamp]
+    }
 }
+
+
 
 //MARK: ActivityState
 enum ActivityState {

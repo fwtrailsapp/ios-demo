@@ -13,6 +13,13 @@
 		7F05DB911BEFE0B500AFFB52 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 7F05DB901BEFE0B500AFFB52 /* .gitignore */; };
 		7F91D7981BF9345E008F0DF7 /* KMLManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F91D7971BF9345E008F0DF7 /* KMLManager.swift */; };
 		D218778C1C0925D300F0F9CC /* Activity.swift in Sources */ = {isa = PBXBuildFile; fileRef = D218778B1C0925D300F0F9CC /* Activity.swift */; };
+		D232FEDA1C50513100BDFCE8 /* ActivityClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D232FED91C50513100BDFCE8 /* ActivityClient.swift */; };
+		D23F25FF1C4D6E0500E46E7E /* AccountClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D23F25FE1C4D6E0500E46E7E /* AccountClient.swift */; };
+		D23F26011C4D6E4700E46E7E /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = D23F26001C4D6E4700E46E7E /* Account.swift */; };
+		D23F26031C4D6EA500E46E7E /* DictionarySerializable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D23F26021C4D6EA500E46E7E /* DictionarySerializable.swift */; };
+		D23F26041C4D725300E46E7E /* DictionarySerializable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D23F26021C4D6EA500E46E7E /* DictionarySerializable.swift */; };
+		D23F26051C4D725600E46E7E /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = D23F26001C4D6E4700E46E7E /* Account.swift */; };
+		D23F26061C4D725A00E46E7E /* AccountClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D23F25FE1C4D6E0500E46E7E /* AccountClient.swift */; };
 		D2493F001C17885400B2E2AB /* AccessDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2493EFF1C17885400B2E2AB /* AccessDataViewController.swift */; };
 		D2493F011C17885400B2E2AB /* AccessDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2493EFF1C17885400B2E2AB /* AccessDataViewController.swift */; };
 		D2493F021C17885400B2E2AB /* AccessDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2493EFF1C17885400B2E2AB /* AccessDataViewController.swift */; };
@@ -62,6 +69,10 @@
 		8D096CA9E6518350CA06E585 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		B6C95345E4BC233FC933B40E /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		D218778B1C0925D300F0F9CC /* Activity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Activity.swift; sourceTree = "<group>"; };
+		D232FED91C50513100BDFCE8 /* ActivityClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityClient.swift; sourceTree = "<group>"; };
+		D23F25FE1C4D6E0500E46E7E /* AccountClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountClient.swift; sourceTree = "<group>"; };
+		D23F26001C4D6E4700E46E7E /* Account.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
+		D23F26021C4D6EA500E46E7E /* DictionarySerializable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DictionarySerializable.swift; sourceTree = "<group>"; };
 		D2493EFF1C17885400B2E2AB /* AccessDataViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccessDataViewController.swift; sourceTree = "<group>"; };
 		D2493F031C179A4D00B2E2AB /* AccountCreationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountCreationController.swift; sourceTree = "<group>"; };
 		D2493F071C17AD1A00B2E2AB /* PhysicalInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhysicalInfoViewController.swift; sourceTree = "<group>"; };
@@ -129,6 +140,45 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		D232FEDB1C50513C00BDFCE8 /* Clients */ = {
+			isa = PBXGroup;
+			children = (
+				D23F25FE1C4D6E0500E46E7E /* AccountClient.swift */,
+				D232FED91C50513100BDFCE8 /* ActivityClient.swift */,
+			);
+			name = Clients;
+			sourceTree = "<group>";
+		};
+		D232FEDC1C50514900BDFCE8 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				D25E15731BF237A9000AA6EC /* ExerciseType.swift */,
+				D218778B1C0925D300F0F9CC /* Activity.swift */,
+				D23F26001C4D6E4700E46E7E /* Account.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		D232FEDD1C50516100BDFCE8 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				D28467F31BEFC8AF00938343 /* ActivityViewController.swift */,
+				D2493EFF1C17885400B2E2AB /* AccessDataViewController.swift */,
+				D2493F031C179A4D00B2E2AB /* AccountCreationController.swift */,
+				D2493F071C17AD1A00B2E2AB /* PhysicalInfoViewController.swift */,
+				D23F26021C4D6EA500E46E7E /* DictionarySerializable.swift */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		D232FEDE1C50522B00BDFCE8 /* Stores */ = {
+			isa = PBXGroup;
+			children = (
+				D28E45C61C2B2A8200392B8D /* WebStore.swift */,
+			);
+			name = Stores;
+			sourceTree = "<group>";
+		};
 		D28467E51BEFC8AF00938343 = {
 			isa = PBXGroup;
 			children = (
@@ -159,18 +209,15 @@
 				7F91D7971BF9345E008F0DF7 /* KMLManager.swift */,
 				D2E785761BF6BC8F00730B69 /* ios-demo-Bridging-Header.h */,
 				D28467F11BEFC8AF00938343 /* AppDelegate.swift */,
-				D28467F31BEFC8AF00938343 /* ActivityViewController.swift */,
 				D28467F51BEFC8AF00938343 /* Main.storyboard */,
 				D28467FB1BEFC8AF00938343 /* Assets.xcassets */,
 				D28467FD1BEFC8AF00938343 /* LaunchScreen.storyboard */,
 				D28468001BEFC8AF00938343 /* Info.plist */,
 				D28467F81BEFC8AF00938343 /* ios_demo.xcdatamodeld */,
-				D25E15731BF237A9000AA6EC /* ExerciseType.swift */,
-				D218778B1C0925D300F0F9CC /* Activity.swift */,
-				D2493EFF1C17885400B2E2AB /* AccessDataViewController.swift */,
-				D2493F031C179A4D00B2E2AB /* AccountCreationController.swift */,
-				D2493F071C17AD1A00B2E2AB /* PhysicalInfoViewController.swift */,
-				D28E45C61C2B2A8200392B8D /* WebStore.swift */,
+				D232FEDD1C50516100BDFCE8 /* ViewControllers */,
+				D232FEDC1C50514900BDFCE8 /* Models */,
+				D232FEDE1C50522B00BDFCE8 /* Stores */,
+				D232FEDB1C50513C00BDFCE8 /* Clients */,
 			);
 			path = "ios-demo";
 			sourceTree = "<group>";
@@ -278,6 +325,7 @@
 				TargetAttributes = {
 					D28467ED1BEFC8AF00938343 = {
 						CreatedOnToolsVersion = 7.1;
+						DevelopmentTeam = 6V2NLDVNQH;
 					};
 					D28468041BEFC8B000938343 = {
 						CreatedOnToolsVersion = 7.1;
@@ -465,14 +513,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D23F26031C4D6EA500E46E7E /* DictionarySerializable.swift in Sources */,
+				D232FEDA1C50513100BDFCE8 /* ActivityClient.swift in Sources */,
 				D2493F041C179A4D00B2E2AB /* AccountCreationController.swift in Sources */,
 				D2493F001C17885400B2E2AB /* AccessDataViewController.swift in Sources */,
 				D218778C1C0925D300F0F9CC /* Activity.swift in Sources */,
 				D28467F41BEFC8AF00938343 /* ActivityViewController.swift in Sources */,
 				D28E45C71C2B2A8200392B8D /* WebStore.swift in Sources */,
+				D23F26011C4D6E4700E46E7E /* Account.swift in Sources */,
 				7F91D7981BF9345E008F0DF7 /* KMLManager.swift in Sources */,
 				D28467FA1BEFC8AF00938343 /* ios_demo.xcdatamodeld in Sources */,
 				D28467F21BEFC8AF00938343 /* AppDelegate.swift in Sources */,
+				D23F25FF1C4D6E0500E46E7E /* AccountClient.swift in Sources */,
 				D25E15741BF237A9000AA6EC /* ExerciseType.swift in Sources */,
 				D2493F081C17AD1A00B2E2AB /* PhysicalInfoViewController.swift in Sources */,
 			);
@@ -484,9 +536,12 @@
 			files = (
 				D2493F051C179A4D00B2E2AB /* AccountCreationController.swift in Sources */,
 				D2493F011C17885400B2E2AB /* AccessDataViewController.swift in Sources */,
+				D23F26061C4D725A00E46E7E /* AccountClient.swift in Sources */,
 				D2493F091C17AD1A00B2E2AB /* PhysicalInfoViewController.swift in Sources */,
 				D284680A1BEFC8B000938343 /* ios_demoTests.swift in Sources */,
+				D23F26041C4D725300E46E7E /* DictionarySerializable.swift in Sources */,
 				D28E45C81C2B2A8200392B8D /* WebStore.swift in Sources */,
+				D23F26051C4D725600E46E7E /* Account.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -659,10 +714,13 @@
 			baseConfigurationReference = 18C360855584444624E9E6DF /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "ios-demo/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.fortwayne.ios-demo";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -671,10 +729,13 @@
 			baseConfigurationReference = 8D096CA9E6518350CA06E585 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "ios-demo/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.fortwayne.ios-demo";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};

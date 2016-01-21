@@ -38,7 +38,7 @@ class ActivityViewController: UIViewController, CLLocationManagerDelegate {
         self.locationManager.requestWhenInUseAuthorization()
         self.mapView.myLocationEnabled = true
         self.mapView.settings.myLocationButton = true
-        let mgr = KMLManager(gmap: mapView)
+        _ = KMLManager(gmap: mapView)
         self.mapView.addObserver(self, forKeyPath: "myLocation", options: NSKeyValueObservingOptions.New, context: nil)
         
         addGestures()
@@ -99,7 +99,7 @@ class ActivityViewController: UIViewController, CLLocationManagerDelegate {
                 
                 var formattedDuration = ""
                 var formattedDistance = ""
-                var formattedSpeed = formatNumber(currSpeed)
+                let formattedSpeed = formatNumber(currSpeed)
                 
                 // Change units of duration
                 if activity!.duration < 1 { // convert to seconds
@@ -185,8 +185,8 @@ class ActivityViewController: UIViewController, CLLocationManagerDelegate {
             preferredStyle: UIAlertControllerStyle.Alert)
         alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.Cancel, handler: nil))
         self.presentViewController(alert, animated: true, completion: nil)
-        print("adding account")
-        WebStore.addAccount()
+        let client = ActivityClient()
+        client.createActivity(activity!)
         discardHandler(action)
     }
     
