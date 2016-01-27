@@ -30,7 +30,7 @@ class KMLManager {
         for trail in placemarks {
             let linestr = trail.geometry as! KMLLineString
             let path = GMSMutablePath()
-            for coord in linestr.coordinates {
+            for coord in (linestr.coordinates as! [KMLCoordinate]) {
                 let lat = Float(coord.latitude)
                 let long = Float(coord.longitude)
                 path.addLatitude(CLLocationDegrees(lat), longitude: CLLocationDegrees(long))
