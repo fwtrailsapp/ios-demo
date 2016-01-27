@@ -22,7 +22,7 @@ class ActivityViewController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet weak var caloriesView: UITextView!
     
     let locationManager = CLLocationManager()
-    let stdZoom: Float = 15
+    let stdZoom: Float = 17
     var previousLocation: CLLocation?
     var previousTime: NSDate?
     var activity: Activity?
