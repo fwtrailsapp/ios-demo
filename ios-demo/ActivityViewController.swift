@@ -78,6 +78,7 @@ class ActivityViewController: UIViewController, CLLocationManagerDelegate {
             // display that path
             let polyline = GMSPolyline(path: activity!.path)
             polyline.map = mapView
+            polyline.strokeWidth = 4
             
             // if previous time and previous location have been set, calculate the
             // statistics

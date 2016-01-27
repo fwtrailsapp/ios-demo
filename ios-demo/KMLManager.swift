@@ -36,6 +36,8 @@ class KMLManager {
                 path.addLatitude(CLLocationDegrees(lat), longitude: CLLocationDegrees(long))
             }
             let poly = GMSPolyline(path: path)
+            poly.strokeWidth = 6
+            poly.strokeColor = UIColor.blackColor()
             poly.map = gmap
         }
     }
