@@ -41,6 +41,16 @@ class ActivityViewController: UIViewController, CLLocationManagerDelegate {
         _ = KMLManager(gmap: mapView)
         self.mapView.addObserver(self, forKeyPath: "myLocation", options: NSKeyValueObservingOptions.New, context: nil)
         
+        let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let leftViewController = mainStoryboard.instantiateViewControllerWithIdentifier("DrawerMenuViewController") as! DrawerMenuViewController
+        let leftSideNav = UINavigationController(rootViewController: leftViewController)
+        let centerNav = UINavigationController(rootViewController: self)
+        
+        let centerContainer = MMDrawerController(centerViewController: centerNav, leftDrawerViewController: leftSideNav)
+        
+        centerContainer!.openDrawerGestureModeMask = MMOpenDrawerGestureMode.PanningCenterView;
+        centerContainer!.closeDrawerGestureModeMask = MMCloseDrawerGestureMode.PanningCenterView;
+        
         addGestures()
     }
 

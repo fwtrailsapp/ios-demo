@@ -29,6 +29,8 @@
 		D2493F081C17AD1A00B2E2AB /* PhysicalInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2493F071C17AD1A00B2E2AB /* PhysicalInfoViewController.swift */; };
 		D2493F091C17AD1A00B2E2AB /* PhysicalInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2493F071C17AD1A00B2E2AB /* PhysicalInfoViewController.swift */; };
 		D2493F0A1C17AD1A00B2E2AB /* PhysicalInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2493F071C17AD1A00B2E2AB /* PhysicalInfoViewController.swift */; };
+		D25DDC041C601D8A00AEB1F7 /* DrawerMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25DDC031C601D8A00AEB1F7 /* DrawerMenuViewController.swift */; };
+		D25DDC091C6027C000AEB1F7 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25DDC081C6027C000AEB1F7 /* LoginViewController.swift */; };
 		D25E15741BF237A9000AA6EC /* ExerciseType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25E15731BF237A9000AA6EC /* ExerciseType.swift */; };
 		D28467F21BEFC8AF00938343 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28467F11BEFC8AF00938343 /* AppDelegate.swift */; };
 		D28467F41BEFC8AF00938343 /* ActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28467F31BEFC8AF00938343 /* ActivityViewController.swift */; };
@@ -76,6 +78,8 @@
 		D2493EFF1C17885400B2E2AB /* AccessDataViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccessDataViewController.swift; sourceTree = "<group>"; };
 		D2493F031C179A4D00B2E2AB /* AccountCreationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountCreationController.swift; sourceTree = "<group>"; };
 		D2493F071C17AD1A00B2E2AB /* PhysicalInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhysicalInfoViewController.swift; sourceTree = "<group>"; };
+		D25DDC031C601D8A00AEB1F7 /* DrawerMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawerMenuViewController.swift; sourceTree = "<group>"; };
+		D25DDC081C6027C000AEB1F7 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		D25E15731BF237A9000AA6EC /* ExerciseType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExerciseType.swift; sourceTree = "<group>"; };
 		D28467EE1BEFC8AF00938343 /* ios-demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ios-demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D28467F11BEFC8AF00938343 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -167,6 +171,8 @@
 				D2493F031C179A4D00B2E2AB /* AccountCreationController.swift */,
 				D2493F071C17AD1A00B2E2AB /* PhysicalInfoViewController.swift */,
 				D23F26021C4D6EA500E46E7E /* DictionarySerializable.swift */,
+				D25DDC031C601D8A00AEB1F7 /* DrawerMenuViewController.swift */,
+				D25DDC081C6027C000AEB1F7 /* LoginViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -524,6 +530,8 @@
 				7F91D7981BF9345E008F0DF7 /* KMLManager.swift in Sources */,
 				D28467FA1BEFC8AF00938343 /* ios_demo.xcdatamodeld in Sources */,
 				D28467F21BEFC8AF00938343 /* AppDelegate.swift in Sources */,
+				D25DDC041C601D8A00AEB1F7 /* DrawerMenuViewController.swift in Sources */,
+				D25DDC091C6027C000AEB1F7 /* LoginViewController.swift in Sources */,
 				D23F25FF1C4D6E0500E46E7E /* AccountClient.swift in Sources */,
 				D25E15741BF237A9000AA6EC /* ExerciseType.swift in Sources */,
 				D2493F081C17AD1A00B2E2AB /* PhysicalInfoViewController.swift in Sources */,

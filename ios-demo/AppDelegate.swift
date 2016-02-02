@@ -12,8 +12,9 @@ import CoreData
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-    var window: UIWindow?
     var exerciseTypes = []
+    var window: UIWindow?
+    var centerContainer: MMDrawerController?
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
@@ -26,6 +27,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let walkType = ExerciseType(name: "Walk", MET: 3.80)
         
         exerciseTypes = [bikeType, runType, walkType]
+        
+        centerContainer = MMDrawerController()
+        
+        centerContainer!.openDrawerGestureModeMask = MMOpenDrawerGestureMode.PanningCenterView;
+        centerContainer!.closeDrawerGestureModeMask = MMCloseDrawerGestureMode.PanningCenterView;
         
         return true
     }
