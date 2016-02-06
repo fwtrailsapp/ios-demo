@@ -42,6 +42,9 @@
 		D28468151BEFC8B000938343 /* ios_demoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28468141BEFC8B000938343 /* ios_demoUITests.swift */; };
 		D28E45C71C2B2A8200392B8D /* WebStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28E45C61C2B2A8200392B8D /* WebStore.swift */; };
 		D28E45C81C2B2A8200392B8D /* WebStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28E45C61C2B2A8200392B8D /* WebStore.swift */; };
+		D2F4B8F31C618E6C006FACED /* ViewIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F4B8F21C618E6B006FACED /* ViewIdentifier.swift */; };
+		D2F4B8F51C619507006FACED /* DraweredViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F4B8F41C619507006FACED /* DraweredViewController.swift */; };
+		D2F4B8F71C619772006FACED /* DrawerNavigable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F4B8F61C619772006FACED /* DrawerNavigable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -97,6 +100,9 @@
 		D28468161BEFC8B000938343 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D28E45C61C2B2A8200392B8D /* WebStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebStore.swift; sourceTree = "<group>"; };
 		D2E785761BF6BC8F00730B69 /* ios-demo-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ios-demo-Bridging-Header.h"; sourceTree = "<group>"; };
+		D2F4B8F21C618E6B006FACED /* ViewIdentifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewIdentifier.swift; sourceTree = "<group>"; };
+		D2F4B8F41C619507006FACED /* DraweredViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DraweredViewController.swift; sourceTree = "<group>"; };
+		D2F4B8F61C619772006FACED /* DrawerNavigable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawerNavigable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,6 +165,7 @@
 				D25E15731BF237A9000AA6EC /* ExerciseType.swift */,
 				D218778B1C0925D300F0F9CC /* Activity.swift */,
 				D23F26001C4D6E4700E46E7E /* Account.swift */,
+				D2F4B8F21C618E6B006FACED /* ViewIdentifier.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -173,6 +180,8 @@
 				D23F26021C4D6EA500E46E7E /* DictionarySerializable.swift */,
 				D25DDC031C601D8A00AEB1F7 /* DrawerMenuViewController.swift */,
 				D25DDC081C6027C000AEB1F7 /* LoginViewController.swift */,
+				D2F4B8F41C619507006FACED /* DraweredViewController.swift */,
+				D2F4B8F61C619772006FACED /* DrawerNavigable.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -521,12 +530,15 @@
 			files = (
 				D23F26031C4D6EA500E46E7E /* DictionarySerializable.swift in Sources */,
 				D232FEDA1C50513100BDFCE8 /* ActivityClient.swift in Sources */,
+				D2F4B8F71C619772006FACED /* DrawerNavigable.swift in Sources */,
+				D2F4B8F51C619507006FACED /* DraweredViewController.swift in Sources */,
 				D2493F041C179A4D00B2E2AB /* AccountCreationController.swift in Sources */,
 				D2493F001C17885400B2E2AB /* AccessDataViewController.swift in Sources */,
 				D218778C1C0925D300F0F9CC /* Activity.swift in Sources */,
 				D28467F41BEFC8AF00938343 /* ActivityViewController.swift in Sources */,
 				D28E45C71C2B2A8200392B8D /* WebStore.swift in Sources */,
 				D23F26011C4D6E4700E46E7E /* Account.swift in Sources */,
+				D2F4B8F31C618E6C006FACED /* ViewIdentifier.swift in Sources */,
 				7F91D7981BF9345E008F0DF7 /* KMLManager.swift in Sources */,
 				D28467FA1BEFC8AF00938343 /* ios_demo.xcdatamodeld in Sources */,
 				D28467F21BEFC8AF00938343 /* AppDelegate.swift in Sources */,

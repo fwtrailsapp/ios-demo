@@ -11,18 +11,22 @@ import UIKit
 class LoginViewController: UIViewController {
 
     @IBAction func didPressLogin() {
+        
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-        let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        let leftViewController = mainStoryboard.instantiateViewControllerWithIdentifier("DrawerMenuViewController") as! DrawerMenuViewController
-        let centerViewController = mainStoryboard.instantiateViewControllerWithIdentifier("ActivityViewController") as! ActivityViewController
-        let navController = mainStoryboard.instantiateViewControllerWithIdentifier("UINavigationController")
         
-        appDelegate.centerContainer!.centerViewController = centerViewController
-        appDelegate.centerContainer!.leftDrawerViewController = leftViewController
-        navController.addChildViewController(appDelegate.centerContainer!)
+        let centerContainer = appDelegate.centerContainer!
         
-        appDelegate.window!.rootViewController = navController
-        appDelegate.window!.makeKeyAndVisible()
+        let mainStoryboard: UIStoryboard = UIStoryboard(name: ViewIdentifier.MAIN_STORYBOARD.rawValue, bundle: nil)
+
+        let leftViewController = mainStoryboard.instantiateViewControllerWithIdentifier(ViewIdentifier.DRAWER_VIEW_ID.rawValue) as! DrawerMenuViewController
+        
+        let navController = mainStoryboard.instantiateViewControllerWithIdentifier(ViewIdentifier.NAV_CONTROLLER_ID.rawValue)
+        
+        centerContainer.centerViewController = navController
+        centerContainer.leftDrawerViewController = leftViewController
+        
+        presentViewController(centerContainer, animated: true, completion: nil)
+        
     }
     
     override func viewDidLoad() {

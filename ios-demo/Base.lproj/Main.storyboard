@@ -264,9 +264,7 @@
                         </constraints>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
-                    <navigationItem key="navigationItem" title="Record Activity" id="YUn-48-i4o">
-                        <barButtonItem key="leftBarButtonItem" systemItem="action" id="GLA-fm-1bY"/>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Record Activity" id="YUn-48-i4o"/>
                     <connections>
                         <outlet property="caloriesView" destination="7aE-lZ-ypB" id="OPc-2U-dxs"/>
                         <outlet property="completeActivity" destination="Pjz-vd-YX5" id="GKz-fI-phc"/>
@@ -279,7 +277,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1721" y="965"/>
+            <point key="canvasLocation" x="1641" y="965"/>
         </scene>
         <!--Login-->
         <scene sceneID="qRZ-8w-7xg">

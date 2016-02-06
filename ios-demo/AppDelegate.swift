@@ -35,7 +35,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         return true
     }
-
+    
+    /*
+    func transitionViewController(newViewId: ViewIdentifier) {
+        let mainStoryboard: UIStoryboard = UIStoryboard(name: ViewIdentifier.MAIN_STORYBOARD.rawValue, bundle: nil)
+        let leftViewController = mainStoryboard.instantiateViewControllerWithIdentifier(ViewIdentifier.DRAWER_VIEW_ID.rawValue) as! DrawerMenuViewController
+        let centerViewController = mainStoryboard.instantiateViewControllerWithIdentifier(newViewId.rawValue) as! ActivityViewController
+        let navController = mainStoryboard.instantiateViewControllerWithIdentifier(ViewIdentifier.NAV_CONTROLLER_ID.rawValue)
+        
+        centerContainer!.centerViewController = centerViewController
+        centerContainer!.leftDrawerViewController = leftViewController
+        navController.addChildViewController(centerContainer!)
+        
+        window!.rootViewController = navController
+        window!.makeKeyAndVisible()
+    }
+    */
+    
     func applicationWillResignActive(application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
         // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.

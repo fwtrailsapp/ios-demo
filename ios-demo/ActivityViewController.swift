@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ActivityViewController: UIViewController, CLLocationManagerDelegate {
+class ActivityViewController: DraweredViewController, CLLocationManagerDelegate {
 
     // MARK: Properties
     @IBOutlet weak var mapView: GMSMapView!
@@ -20,7 +20,7 @@ class ActivityViewController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet weak var distanceView: UITextView!
     @IBOutlet weak var speedView: UITextView!
     @IBOutlet weak var caloriesView: UITextView!
-    
+
     let locationManager = CLLocationManager()
     let stdZoom: Float = 17
     var previousLocation: CLLocation?
@@ -41,19 +41,18 @@ class ActivityViewController: UIViewController, CLLocationManagerDelegate {
         _ = KMLManager(gmap: mapView)
         self.mapView.addObserver(self, forKeyPath: "myLocation", options: NSKeyValueObservingOptions.New, context: nil)
         
-        let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        let leftViewController = mainStoryboard.instantiateViewControllerWithIdentifier("DrawerMenuViewController") as! DrawerMenuViewController
-        let leftSideNav = UINavigationController(rootViewController: leftViewController)
-        let centerNav = UINavigationController(rootViewController: self)
-        
-        let centerContainer = MMDrawerController(centerViewController: centerNav, leftDrawerViewController: leftSideNav)
-        
-        centerContainer!.openDrawerGestureModeMask = MMOpenDrawerGestureMode.PanningCenterView;
-        centerContainer!.closeDrawerGestureModeMask = MMCloseDrawerGestureMode.PanningCenterView;
+        let menuButton = UIBarButtonItem(image: UIImage(named: "Menu"), style: UIBarButtonItemStyle.Plain, target: self, action: "drawerBarButtonPressed")
+        navigationItem.leftBarButtonItem = menuButton
+        print(navigationItem.leftBarButtonItem == menuButton)
         
         addGestures()
     }
-
+    
+    override func drawerBarButtonPressed() {
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        appDelegate.centerContainer?.toggleDrawerSide(MMDrawerSide.Left, animated: true, completion: nil)
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
